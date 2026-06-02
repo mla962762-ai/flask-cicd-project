@@ -33,17 +33,12 @@ pipeline {
             steps {
                 echo 'Deploying application...'
                 script {
-                    bat """
-                        docker stop ${CONTAINER_NAME} || exit 0
-                        docker rm ${CONTAINER_NAME} || exit 0
-                    """
+                    // إيقاف وحذف الحاوية القديمة بأمان على الويندوز
+                    bat "docker stop ${CONTAINER_NAME} || set errorlevel=0"
+                    bat "docker rm ${CONTAINER_NAME} || set errorlevel=0"
                     
-                    bat """
-                        docker run -d ^
-                        --name ${CONTAINER_NAME} ^
-                        -p ${APP_PORT}:5000 ^
-                        ${DOCKER_IMAGE}:${DOCKER_TAG}
-                    """
+                    // تشغيل الحاوية الجديدة
+                    bat "docker run -d --name ${CONTAINER_NAME} -p ${APP_PORT}:5000 ${DOCKER_IMAGE}:${DOCKER_TAG}"
                 }
                 echo 'Deployment completed successfully!'
                 echo "Application is running at http://localhost:${APP_PORT}"
