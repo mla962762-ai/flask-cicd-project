@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask CI/CD Project</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #948ea6 0%, #1d50b7 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .container {
+            background: rgb(23, 24, 25);
+            border-radius: 20px;
+            padding: 50px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            text-align: center;
+            max-width: 600px;
+            width: 100%;
+        }
+        h1 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 2.5em;
+        }
+        .success-badge {
+            background: #948ea6;
+            color: rgb(65, 60, 60);
+            padding: 10px 30px;
+            border-radius: 50px;
+            display: inline-block;
+            margin: 20px 0;
+            font-weight: bold;
+        }
+        .info-box {
+            background: #183384;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .info-item {
+            margin: 10px 0;
+            font-size: 1.1em;
+        }
+        .label {
+            color: #e4e5ec;
+            font-weight: bold;
+        }
+        .value {
+            color: #948ea6;
+        }
+        .footer {
+            margin-top: 30px;
+            color: #1d50b7;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 Legend Project 🚀</h1>
+        <div class="success-badge">✅ Deployment Successful!</div>
+        
+        <div class="info-box">
+            <div class="info-item">
+                <span class="label">Current Time:</span>
+                <div class="value">{{ current_time }}</div>
+            </div>
+            <div class="info-item">
+                <span class="label">Container Hostname:</span>
+                <div class="value"> * Alaa 🫡🖤 * </div>
+            </div>
+            <div class="info-item">
+                <span class="label">Status:</span>
+                <div class="value" style="color: #948ea6;">Running in Docker Container 🐳</div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>Built with MOHAMED ALaa ABO BADR using Flask, Docker & Jenkins</p>
+            <p>CI/CD Pipeline Project</p>
+        </div>
+    </div>
+</body>
+</html>
